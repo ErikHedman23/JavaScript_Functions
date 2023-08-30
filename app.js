@@ -4,8 +4,12 @@
 console.log("EXERCISE 1:\n==========\n");
 let response = prompt("Enter a number here:");
 function printOdds(count) {
+  if (count < 0) {
+    console.log(`Invalid input. Please provide a positive number`);
+    return;
+  }
   for (let i = 0; i <= count; i++) {
-    if (i % 2 != 0) {
+    if (i % 2 !== 0) {
       console.log(`${i} is an odd number!`);
     }
   }
@@ -18,6 +22,9 @@ let userInputAge = prompt("Enter your age:");
 function checkAge(userName, age) {
   let aboveSixteen = `Congrats ${userName}, you can drive!`;
   let belowSixteen = `Sorry ${userName}, but you need to wait until you are 16.`;
+  if (!userName || !age) {
+    console.log("Please provide name and age.");
+  }
   if (age >= 16) {
     console.log(aboveSixteen);
   } else {
@@ -45,6 +52,10 @@ function cartisianPlane(x, y) {
     console.log(`${x},${y} is in Quadrant 3`);
   } else if (x > 0 && y < 0) {
     console.log(`${x},${y} is in Quadrant 4`);
+    // } else if (x === 0) {
+    //   console.log("Y axis");
+    // } else if (y === 0) {
+    //   console.log("X axis");
   } else {
     console.log("You did not enter a valid number.");
   }
